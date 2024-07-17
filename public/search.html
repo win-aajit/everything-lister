@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content = "IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <!--TITLE-->
+        <title>Medium Site Login</title>
+        
+        <!--CSS & JS-->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  
+
+            
+    </head>
+    <body>
+        <div class="loginbox">
+            <!--Login Link-->
+            <div class="loginlink">
+                <h2><a href="/list">My List</a></h2>
+            </div>
+        </div>
+
+
+        <div class="topbox">
+            <div class="header">
+                <div class="searchheader">
+                    <h2>Search for any item</h2>
+                </div>
+            </div>
+
+            <!--Searching Section-->
+            <div class="search-box">
+                <div class="textbox">
+                    <input id="searchbox" type="text" class="textbox" placeholder="search..."/>
+                </div>
+                            <button id="searchbutton" class="search-results">search</button>
+                            <button id="clearbutton" class="clear-results">clear</button>
+            </div>
+
+            <div class="dropdown">
+                <!--Dropdown Menu for Selecting Medium-->
+
+                 <label for="mediumdropdown">Choose a Medium:</label>
+                    <select name="mediumdropdown" id="dropdown" title="mediumdropdown">
+                        <option value="blank">select</option>
+                        <option value="Movies/TV">Movies/TV - IMDb</option>
+                        <option value="Books">Books - Hapi-Books</option>
+                        <option value="Anime">Anime - MAL</option>
+                        <option value="Manga">Manga - MAL</option>
+                    </select>
+            </div>
+            
+
+            <!--Scripts-->
+        </div>
+
+        <div class="bottombox">
+            <div class="moviescontainer" id="moviescontainer" ><h2>Results Here</h2></div>
+        </div>
+
+        <script src="search.js"></script>
+
+    </body>
+</html>
