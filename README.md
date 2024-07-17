@@ -6,4 +6,5 @@ This website accesses IMdB, Hapi-Books, and MyAnimeList API's through RapidAPI, 
 Utilizes Node.js for the backend server, and has a functioning authentication and registration system using bcrypt to store each user's individuals list on a database.
 
 Repisitory Link: https://github.com/win-aajit/everythinglister
+
 Hosted Website Link: 
