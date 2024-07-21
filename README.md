@@ -7,4 +7,3 @@ Utilizes Node.js for the backend server, and has a functioning authentication an
 
 Repisitory Link: https://github.com/win-aajit/everythinglister
 
-Hosted Website Link: 
