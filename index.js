@@ -3,6 +3,7 @@ const express = require('express');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
 const path = require('path');
+const port = process.env.PORT || 4000;
 
 const USERS_FILE = 'users.json'
 
@@ -176,5 +177,5 @@ app.get('/listdata', (req, res) => {
 
 
 
-app.listen(3002, () => console.log(`App available on http://localhost:3002`));
+app.listen(port, () => console.log(`App available on http://localhost:10000`));
 
