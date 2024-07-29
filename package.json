@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "devStart": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development"
+    "test": "index.js",
+    "start": ""
   },
   "keywords": [],
   "author": "",
