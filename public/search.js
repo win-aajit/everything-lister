@@ -34,6 +34,9 @@ searchInput.addEventListener('submit', async (event) => {
 searchButton.addEventListener("click", async (event) => {
     event.preventDefault();
     switch (dropdownInput.value){
+        case 'blank':
+            alert('Select a source.');
+            break;
         case 'Movies/TV':
             findItems(0);
             break;
@@ -207,59 +210,76 @@ async function showItems(data, mediumtype){
 
 async function addToList(id, mediumtype){
     console.log("flag");
+//checking if loggedIn
+    const res = await fetch('/list', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    });
+    console.log('flag2');
+    console.log(res);
+    const data = await res.json();
+    console.log(data);
+    if(data.loggedIn){
 
-    switch (mediumtype){
-        case 0: //imdb
-                const res0 = await fetch('/list', {
+        switch (mediumtype){
+            case 0: //imdb
+                    const res0 = await fetch('/list', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({movietv: id})
+                    });
+                    console.log('flag2');
+                    console.log(res0);
+                    const data0 = await res0.json();
+                    console.log(data0);
+                break;
+            case 1:
+                const res1 = await fetch('/list', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({movietv: id})
+                    body: JSON.stringify({books: id})
                 });
                 console.log('flag2');
-                console.log(res0);
-                const data0 = await res0.json();
-                console.log(data0);
-            break;
-        case 1:
-            const res1 = await fetch('/list', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({books: id})
-            });
-            console.log('flag2');
-            console.log(res1);
-            const data1 = await res1.json();
-            console.log(data1);
-            break;
-        case 2:
-            const res2 = await fetch('/list', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({anime: id})
-            });
-            console.log('flag2');
-            console.log(res2);
-            const data2 = await res2.json();
-            console.log(data2);
-            break;
-        case 3:
-            const res3 = await fetch('/list', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({manga: id})
-            });
-            console.log('flag2');
-            console.log(res3);
-            const data3 = await res3.json();
-            console.log(data3);
-            break;
+                console.log(res1);
+                const data1 = await res1.json();
+                console.log(data1);
+                break;
+            case 2:
+                const res2 = await fetch('/list', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({anime: id})
+                });
+                console.log('flag2');
+                console.log(res2);
+                const data2 = await res2.json();
+                console.log(data2);
+                break;
+            case 3:
+                const res3 = await fetch('/list', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({manga: id})
+                });
+                console.log('flag2');
+                console.log(res3);
+                const data3 = await res3.json();
+                console.log(data3);
+                break;
+        }
+        alert('Added to List.')
+    }
+    else {
+        alert('Not Logged In. (Click "My List" to Login)');
     }
 }

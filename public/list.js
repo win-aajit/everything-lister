@@ -1,4 +1,18 @@
 const apikey = '48aa722f'
+getName();
+async function getName() {
+    const nameres = await fetch('/username', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    });
+    const namedata = await nameres.json();
+    console.log(namedata);
+    whoselist.innerHTML = `${namedata}'s List`
+}
+
+
 
 const dropdownInput = document.getElementById("dropdownlist");
 moviescontainer.innerHTML = 'List is Empty/Loading'; // clears previous html
@@ -21,6 +35,8 @@ dropdownInput.addEventListener("change", async e => {
 
 
     switch (dropdownInput.value){
+        case 'blank':
+            alert('Select a source.')
         case 'Movies/TV':
 
             for(id of data[0]){

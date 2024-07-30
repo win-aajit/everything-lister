@@ -37,7 +37,6 @@ form{
     top: 50%;
     transform: translate(-50%,-50%);
     border-radius: 10px;
-    opacity: 70%;
 }
 
 h1 {
@@ -94,7 +93,6 @@ h1 {
     top: 30%;
     transform: translate(-50%,-50%);
     border-radius: 10px;
-    opacity: 70%;
 }
 
 .bottombox {
@@ -108,7 +106,6 @@ h1 {
     top:70%;
     transform: translate(-50%,-3%);
     border-radius: 10px;
-    opacity: 70%;
 
 }
 
@@ -150,7 +147,6 @@ h1 {
     top: 5%;
     /*transform: translate(-50%,-50%);*/
     border-radius: 10px;
-    opacity: 70%;
 }
 
 .searchheader {
@@ -218,6 +214,22 @@ h1 {
 
 /*List page*/
 
+.whoselist {
+    position:absolute;
+
+    color: white;
+    font-weight: 800;
+    font-size: 3em;
+    top: 10%;
+
+}
+
+.dropdownlist {
+    left: 50%;
+    font-weight: 600;
+    color: white;
+}
+
 .searchlinkbox {
     background: whitesmoke;
     width: 10 em;
@@ -228,7 +240,6 @@ h1 {
     top: 5%;
     /*transform: translate(-50%,-50%);*/
     border-radius: 10px;
-    opacity: 70%;
 }
 
 .text {
@@ -255,7 +266,6 @@ h1 {
     transform: translate(-50%,-3%);
     border-radius: 10px;
     text-align: center;
-    opacity: 70%;
 
 }
 
