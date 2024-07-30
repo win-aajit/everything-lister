@@ -9,7 +9,7 @@ Deployed using Render. (Limited amount of API pulls per month)
 
 Repisitory Link: https://github.com/win-aajit/everythinglister
 
-https://everything-lister.onrender.com/
+Hosted Website Link : https://everything-lister.onrender.com/
 
 ![Screenshot 2024-07-30 132436](https://github.com/user-attachments/assets/3805d85e-4d6b-4f36-b3b3-21d291a0222f)
 ![Screenshot 2024-07-30 122256](https://github.com/user-attachments/assets/86936d11-e2d7-4d4b-810f-74290540cc2d)
