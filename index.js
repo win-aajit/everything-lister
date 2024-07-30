@@ -3,7 +3,6 @@ const express = require('express');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
 const path = require('path');
-const port = process.env.PORT || 4000;
 
 const USERS_FILE = 'users.json'
 
@@ -38,10 +37,10 @@ app.post('/list', (req,res) => {
         if(req.body.manga) user.manga.push(req.body.manga);
         fs.writeFileSync(USERS_FILE, JSON.stringify(users));
 
-        res.json({alertMessage: 'Added title'});
+        res.json({loggedIn: true});
     }
     else {
-        res.json({alertMessage: 'You need to be logged in'});
+        res.json({loggedIn: false});
     }
 
 });
@@ -145,6 +144,9 @@ app.get('/', (req, res) => {res.sendFile(path.join(__dirname, 'public', 'search.
 
 app.get('/login', (req, res) => {res.sendFile(path.join(__dirname, 'public', 'login.html'));});
 
+app.get('/username', (req, res) => {res.send(JSON.stringify(req.session.user.name))});
+
+
 app.get('/list', (req, res) => {
     if (req.session.user) {
         const user = users.find(user => user.name === req.session.user.name);
@@ -152,6 +154,7 @@ app.get('/list', (req, res) => {
         const listdata = [user.movietv, user.books, user.anime, user.manga];
         console.log(listdata);
         res.sendFile(path.join(__dirname, 'public', 'list.html'));
+
         //res.send(listdata);
 
     } else {
@@ -177,5 +180,5 @@ app.get('/listdata', (req, res) => {
 
 
 
-app.listen(port, () => console.log(`App available on http://localhost:10000`));
+app.listen(3002, () => console.log(`App available on http://localhost:3002`));
 

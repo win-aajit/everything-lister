@@ -214,6 +214,22 @@ h1 {
 
 /*List page*/
 
+.whoselist {
+    position:absolute;
+
+    color: white;
+    font-weight: 800;
+    font-size: 3em;
+    top: 10%;
+
+}
+
+.dropdownlist {
+    left: 50%;
+    font-weight: 600;
+    color: white;
+}
+
 .searchlinkbox {
     background: whitesmoke;
     width: 10 em;
